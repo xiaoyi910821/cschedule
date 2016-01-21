@@ -22,7 +22,7 @@
 	position: relative;
 	width: 100%;
 	max-width: 100%;
-	max-height:768px;
+	max-height:360px;
 	margin:0px auto 0px;
 	z-index:90;
 	text-align:left; /* reset align=center */
@@ -34,7 +34,7 @@
 	-moz-box-sizing: content-box;
 	box-sizing: content-box; 
 }
-* html #wowslider-container1{ width:1024px }
+* html #wowslider-container1{ width:640px }
 #wowslider-container1 .ws_images ul{
 	position:relative;
 	width: 10000%; 
@@ -64,7 +64,7 @@
 	left:0;
 	top:0;
 	height:100%;
-	max-height:768px;
+	max-height:360px;
 	max-width: 100%;
 	vertical-align: top;
 	border:none;
@@ -73,7 +73,7 @@
 #wowslider-container1 .ws_images ul a{
 	width:100%;
 	height:100%;
-	max-height:768px;
+	max-height:360px;
 	display:block;
 	color:transparent;
 }
@@ -89,7 +89,7 @@
 	margin:0;
 }
 #wowslider-container1 .ws_images > div > img {
-	max-height:768px;
+	max-height:360px;
 }
 
 #wowslider-container1 .ws_images iframe {
@@ -242,7 +242,7 @@
 	content: '';
 	display: block;
 	height:100%;
-	background: #000000;
+	background: #54acd2;
 
   	-webkit-transform: rotateX(-90deg) translateZ(-8px) translateY(8px);
   	transform: rotateX(-90deg) translateZ(-8px) translateY(8px);
@@ -318,7 +318,7 @@
 	text-align: center;
 	line-height: 2.5em;
 	height:100%;
-	background: #000000;
+	background: #54acd2;
 	color: #1A2223;
 
   	-webkit-transform: rotateX(-90deg) translateZ(-1.25em) translateY(1.25em);
@@ -352,7 +352,7 @@
   	-webkit-transform: rotateX(0deg);
   	transform: rotateX(0deg);
   	background: #1A2223;
-	color: #000000;
+	color: #54acd2;
 }
 
 #wowslider-container1 a.ws_next:hover > span,
@@ -384,7 +384,7 @@
 	display:inline-block;
 	padding: 0.1em 0.6em;
 	background-color: #1A2223;
-	color: #000000;
+	color: #54acd2;
 }
 #wowslider-container1 .ws-title div{
 	display:block;
@@ -395,13 +395,13 @@
 	text-transform: uppercase;	
 	font-size: 2em;
 }#wowslider-container1 .ws_images > ul{
-	animation: wsBasic 13.6s infinite;
-	-moz-animation: wsBasic 13.6s infinite;
-	-webkit-animation: wsBasic 13.6s infinite;
+	animation: wsBasic 16s infinite;
+	-moz-animation: wsBasic 16s infinite;
+	-webkit-animation: wsBasic 16s infinite;
 }
-@keyframes wsBasic{0%{left:-0%} 8.09%{left:-0%} 25%{left:-100%} 33.09%{left:-100%} 50%{left:-200%} 58.09%{left:-200%} 75%{left:-300%} 83.09%{left:-300%} }
-@-moz-keyframes wsBasic{0%{left:-0%} 8.09%{left:-0%} 25%{left:-100%} 33.09%{left:-100%} 50%{left:-200%} 58.09%{left:-200%} 75%{left:-300%} 83.09%{left:-300%} }
-@-webkit-keyframes wsBasic{0%{left:-0%} 8.09%{left:-0%} 25%{left:-100%} 33.09%{left:-100%} 50%{left:-200%} 58.09%{left:-200%} 75%{left:-300%} 83.09%{left:-300%} }
+@keyframes wsBasic{0%{left:-0%} 12.5%{left:-0%} 25%{left:-100%} 37.5%{left:-100%} 50%{left:-200%} 62.5%{left:-200%} 75%{left:-300%} 87.5%{left:-300%} }
+@-moz-keyframes wsBasic{0%{left:-0%} 12.5%{left:-0%} 25%{left:-100%} 37.5%{left:-100%} 50%{left:-200%} 62.5%{left:-200%} 75%{left:-300%} 87.5%{left:-300%} }
+@-webkit-keyframes wsBasic{0%{left:-0%} 12.5%{left:-0%} 25%{left:-100%} 37.5%{left:-100%} 50%{left:-200%} 62.5%{left:-200%} 75%{left:-300%} 87.5%{left:-300%} }
 
 #wowslider-container1 .ws_bulframe div div{
 	height: auto;
