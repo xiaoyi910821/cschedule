@@ -1,0 +1,74 @@
+/*********************************** //
+// This CSS file is created to hold  //
+// the CSS of all styles related to  //
+// the participant.                  //
+// ***********************************/
+
+
+
+/* Image Update Popup */
+/* Location: upper right navigation bar */
+/* Event: profile image clicked */
+#participant-show {
+	display: block;
+	position: fixed;
+	top: 2%;
+	right: 0;
+	width: 50%;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	background: rgba(0,0,0,0.8);
+	margin: 8px 22px 8px 22px;
+	z-index: 10;
+}			
+
+/* Profile Image Display */
+/* Location: upper right navigation bar */
+/* Action: display of the profile image */
+#editProfileImage {
+	float: left;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-size: 100% 100%;
+}
+
+/* Container for Participant List */
+#ParticipantDiv {
+  position: absolute;
+  top: 240px;
+  right: 0px;
+  width: 180px;
+  background-color: #eee;
+  border: solid;
+  z-index: 9;
+}
+
+/* Participant List Sidebar Button */
+#sidebar-hide-btn {
+    height: 52px;
+    left: -32px;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    top: 0px;
+    z-index: 6;
+    width: 32px;
+	background: url(../images/participantListArrow.png);
+	background-size: 100% 100%;
+	transform: scale(-1, 1);
+}
+#sidebar-show-btn {
+    height: 52px;
+    left: -32px;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    top: 0px;
+    z-index: 6;
+    width: 32px;
+	background: url(../images/participantListArrow.png);
+	background-size: 100% 100%;
+}

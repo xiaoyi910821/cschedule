@@ -1,0 +1,25 @@
+<template id="participantEditViewTemplate">
+<div id="participant-show" style="display:none">
+	<!---<img src = '<%= user.profile %>'>
+	<h2 id= 'updateusername' contenteditable="true" contenteditable="true"><%= user.username %></h2>
+	<p>Email: <%= user.email %></span></p>
+	Mobile:<span id='updatemobile' contenteditable="true"><%= user.mobile %></span>
+	<hr />
+	<button id ="deleteParticipant" value=<%= user.id %> >Remove</button>
+	<button id ="updateUser" value=<%= user.id %> >Update</button>
+	<!---Profile-->
+	<div style="float: right; border: 1px solid red;">
+		<input id="inputName" placeholder="Name" name="name" type="text" value=""><br>
+		<input id="inputEmail" placeholder="Email" name="email" type="text" value=""><br>
+		<input id="inputMobile" placeholder="Mobile" name="mobile" type="text" value=""><br>
+		<div 'data-test'= '<%= user.id %>'></div><br>
+		<input id="inputRole" placeholder="Role" name="role" type="text" value=""><br>
+		
+	</div>
+	
+	<canvas id="uploadImg" width="500" height="500">Drag the image over this canvas</canvas>
+	<canvas id="saveImg" width="100" height="100">This will be the image that is saved</canvas>
+	<input type="file" accept="image/*" id="uploadBtn"><br>
+	<button id="saveButton" style="float: left;">Click to save the image</button>
+</div>
+</template>

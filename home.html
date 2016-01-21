@@ -1,0 +1,877 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="javascripts/backbone.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="javascripts/engine1/style.css"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>-->
+    <script src="javascripts/carouselengine/jquery.js"></script>
+    <script src="javascripts/carouselengine/amazingcarousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="javascripts/carouselengine/initcarousel-1.css">
+    <script src="javascripts/carouselengine/initcarousel-1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="javascripts/engine2/style.css" />
+ 
+<!-- End WOWSlider.com HEAD section -->
+</head>
+<style>
+body{
+	height: 100%;
+width: 100%;
+}
+#amazingcarousel-container-1{
+clear:both;
+height: auto;
+margin-bottom: 1%;
+width: 90%;
+padding-left:15%;
+
+max-height: 500px;
+   }
+#navheader{
+	background-color:rgba(0, 0, 0, 0.7);
+	font-size: 22px;
+	text-align: center;
+	font-family: Century Gothic, sans-serif;
+	text-shadow:1px 1px 4px black;
+	letter-spacing: 2px;
+	box-shadow: 0px 0px 3px 0px black;
+	padding-left: 3%;
+	font-variant: small-caps;
+	z-index: 300;
+	position: absolute;
+	width: 100%;
+	top:0;
+	border-radius: 0px;
+	
+}
+#navheader ul{
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	margin-right: 10%;
+	width: 95%;
+}
+
+#navheader li{
+height: 55px;
+min-width: 125px;
+
+	width: 20%;
+	opacity: 0.7;
+	text-align: center;
+	
+	}
+#navheader li.home{
+	opacity: 1;
+}
+#mainbar{
+	width: 100%;
+	text-align: center;
+}
+
+
+#navheader li:hover{
+	text-decoration: none;
+	opacity: 1;
+}
+#navheader a{
+	color:white;
+
+}
+
+.mainbody{
+	background: white;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+	height: 100%;
+}
+.bg, img.bgfade{
+	display: none;
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left:0;
+	z-index: 0;
+	
+	box-shadow: 0px 0px 5px 1px black;
+}
+.title{
+	text-align: center;
+	color: #F8F8F8;
+	font-size: 40px;
+	font-family: Century Gothic, sans-serif;
+	font-variant: small-caps;
+	letter-spacing: 2px;
+	text-shadow:2px 2px 2px black;
+	position: absolute;
+	top:50%;
+	width: 100%;
+}
+
+.note1,.note2{
+	font-size: 20px;
+	font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+	letter-spacing: 2px;
+	
+}
+.note1{
+	padding-left: 30%;
+	padding-right: 30%;
+	padding-bottom: 17%;
+	height: auto;
+	font-size: 18px;
+}
+.date{
+	color: white;
+	font-size: 18px;
+	opacity: 0.9;
+	
+}
+.decorated{
+     overflow: hidden;
+     text-align: center;
+
+ }
+.decorated > span{
+    position: relative;
+    display: inline-block;
+}
+.decorated > span:before, .decorated > span:after{
+    content: '';
+    position: absolute;
+    top: 60%;
+    border-bottom: 1px solid #D0D0D0;
+    width: 100%; /* half of limiter */
+    margin: 0 4%;
+    opacity: 0.6;
+     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 0.6; }
+}
+
+.decorated > span:before{
+    right: 100%;
+}
+.decorated > span:after{
+    left: 100%;
+}
+.about{
+	width: 100%;
+	height: auto;
+	font-variant: small-caps;
+	font-size: 40px;
+	font-family: Century Gothic, sans-serif;
+	text-align: center;
+	padding-top: 3%;
+	padding-left: 15%;
+	padding-right: 15%;
+	letter-spacing: 2px;
+	text-shadow:0px 0px 2px black;
+	
+}
+.about_intro{
+	font-size: 15px;
+	word-wrap: break-word;
+	padding-bottom: 3%;
+	padding-top: 1%;
+	font-variant: normal;
+	line-height: 25px;
+	letter-spacing: 0.7px;
+	text-shadow:none;
+
+}
+.about_intro .date{
+	color: black;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-family: Verdana;
+	padding-bottom: 0;
+	font-style: italic;
+}
+.download{
+	padding-top: 3%;
+	padding-bottom: 3%;
+	font-variant: normal;
+	font-size: 20px;
+	color:gray;
+	text-shadow:none;
+}
+.about table{
+	width:70%;
+	text-align: center;
+}
+.about td{
+	width: 50%;
+	
+}
+.about img{
+	width: 30%;
+}
+.team{
+	width:100%;
+	background-color: #F8F8F8 ;
+	height: auto;
+	box-shadow: 1px 1px 3px 1px silver;
+	
+}
+.team table{
+	width: 100%;
+	height: auto;
+}
+.team td{
+	width:50%;
+	height: 700px;
+	background-repeat: no-repeat;
+
+}
+.vs{
+	width: 100%;
+	padding-top: 3%;
+	
+}
+.vs em{
+	font-variant: small-caps;
+	font-size: 35px;
+	font-family: Century Gothic, sans-serif;
+	letter-spacing: 2px;
+	text-shadow:0px 0px 2px black;
+	font-style: normal;
+}
+.business_user, .indi_user{
+	
+	width: 40%;
+	display: inline-block;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-bottom: 5%;
+	line-height: 28px;
+	font-family: Verdana;
+	font-size: 16px;
+}
+.business, .individual{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	text-align: center;
+	color: #F8F8F8;
+	opacity: 0.8;
+	font-variant: small-caps;
+	font-size: 50px;
+	letter-spacing: 2px;
+	padding-left: 10%;
+	padding-right: 10%;
+	box-shadow: 0px 0px 3px 0px black;
+   
+}
+.qa{
+	width: 100%;
+	background-color: #F8F8F8;
+	text-align: center;
+	font-size: 45px;
+	font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+	padding: 1%;
+	font-variant: small-caps;
+}
+.float-box{
+	font-family: Century Gothic, sans-serif;
+	font-size: 15px;
+
+	height: 10%;
+	margin-left: 8%;
+	
+	width: 40%;
+	float: left;	
+	font-variant: normal;
+}
+.street, .street-up, .street-down{
+	padding-top: 9%;
+	width: 100%;
+	height: 250px;
+	color: #F8F8F8;
+	letter-spacing: 2px;
+	font-variant: small-caps;
+	font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+	font-size: 50px;
+	background-size: 100% 100%;
+	box-shadow: 0px 0px 3px 1px #202020  ;
+	text-shadow:3px 3px 6px black;
+}
+.street-up{
+	
+}
+.street-down{
+	text-align: left;
+	padding-left: 15%;
+	
+}
+.street{	
+	text-align: right;
+	padding-right: 9%;
+		padding-top: 9%;
+	
+}
+.footer{
+	clear: both;
+	width: 100%;
+	height: auto;
+	padding-top: 1%;
+	background: black;
+	text-align: center;
+	color:silver;
+	font-family: Century Gothic, sans-serif;
+	font-size: 12px;	
+	box-shadow: 2px 2px 6px 1px black;
+
+}
+.icon img{
+	width: 25px;
+	height: 25px;
+	margin-left: 8%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+.extra{
+	color: silver;
+	font-size: 15px;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	width: 30%;
+	height: auto;
+	display: inline-block;
+}
+
+#loginAndRegisterPanel{
+	background-color: rgba(0, 0, 0, 0.85);
+	width: 50%;
+	color: #f0f0f0;
+	text-align: center;
+	top:20%;
+	left:25%;
+	min-height: 420px;
+	max-height: 600px;
+	position: fixed;
+	font-size: 19px;
+	font-family: Century Gothic, sans-serif;
+	font-variant: small-caps;
+	overflow: scroll;
+	z-index: 300;
+	display: none;
+	
+}
+#userLogin input, #userRegister input{
+	width: 100%;
+	height: 40px;
+	border-radius: 2px;
+	border: none;
+	color: black;
+	font-size: 17px;
+	font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+	font-variant: small-caps;
+	
+}
+#userLogin td, #userRegister td{
+	
+	padding-top: 4%;
+	padding-bottom: 4%;
+	width: 70%;
+	text-align: center;
+	font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+	height: 60px;
+	
+	
+}
+#userLogin td.pass, #userRegister td.pass{
+	width: 140px;
+	text-align: center;
+	
+}
+#userLogin, #userRegister{
+
+	width: 100%;
+	text-align: center;
+	height: 90px;
+}
+#userLogin button.support{
+	border:none;
+
+	color:white;
+	width: 20%;
+	text-align: center;
+	text-transform: lowercase;
+	font-variant: normal;
+	font-size: 10px;
+	text-decoration: underline;
+	font-family: verdana;
+	font-style: italic;
+	background:transparent;
+
+}
+#userLogin button.request, #resetPassword button.request, #userRegister button.request{
+	border:none;
+
+	color:white;
+	width: 20%;
+		text-align: center;
+		height: 40px;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-top: 25px;
+	font-size: 15px;
+	background: black;
+	border-radius: 4px;
+		font-family: Century Gothic, sans-serif;
+	font-variant: small-caps;
+
+}
+
+
+
+.action{
+	padding: 3%;
+	font-size: 25px;
+}
+#loginAndRegisterPanel a, #loginAndRegisterPanel a:hover{
+	color: white;
+	text-decoration: none;
+}
+a.request{
+	text-decoration: none;
+}
+
+
+
+      #carousel {
+        width:100%;
+        height:300px;
+        
+        
+        overflow:hidden;
+      }
+      #carousel img {
+        visibility:hidden; /* hide images until carousel can handle them */
+        cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+      }
+	</style>
+<script>
+
+$( document ).ready(function() {
+	$(".contact").hide();
+	$(".contact table").css("display","block");
+	
+		$(".title").fadeIn(1500);
+		//$(".header").fadeIn(400);
+	$(window).load(function(){
+
+				
+				
+				    $("#help").click(function(){
+        $(".contact").toggle();
+    });
+	$('#scroll').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;});
+
+    $('#download').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;});
+				
+		
+
+});
+	</script>
+	<script>
+
+function bright(x)
+{
+	x.style.opacity=1;
+	x.style.backgroundColor="rgba(0, 0, 0, 0)";
+}
+function dark(x)
+{
+	x.style.opacity=0.8;
+	x.style.backgroundColor="rgba(0, 0, 0, 0.3)";
+}
+function pop(x)
+{
+	document.getElementById("loginAndRegisterPanel").style.display="block";
+
+	/*
+	document.getElementById('continue').disabled=true;
+	document.getElementById('checkbox').checked=false;
+	document.getElementById("popbox").style.display="block"
+	*/
+	
+	if(x.innerHTML=="join us")
+{
+	//document.getElementById("login").style.display="none";
+	document.getElementById("userRegister").style.display="block";
+	document.getElementById("userRegister").style.height="500px";
+	document.getElementById("userLogin").style.display="none";
+	
+	}
+		if(x.innerHTML=="log in")
+{
+	document.getElementById("userLogin").style.display="block";
+	document.getElementById("userRegister").style.display="none";
+	}
+}
+
+function hide()
+{
+	document.getElementById("loginAndRegisterPanel").style.display="none";
+}
+ /*   function validate() {
+        if (document.getElementById('checkbox').checked) {
+        	document.getElementById('continue').disabled=false; //or grab it by tagname etc
+
+        } else {
+            document.getElementById('continue').disabled=true;
+        }
+    }
+function change()
+    {
+    	document.getElementById('signup').style.display="none";
+    	document.getElementById('signup-next').style.display="block";
+    }
+*/
+</script>
+
+<body>
+
+<div class="mainbody">
+	
+  <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+  <div id="wowslider-container2">
+  <div class="ws_images"><ul>
+    <li><img src="images/data2/images/social.jpg" alt="bar" title="bar" id="wows1_0"/></li>
+    <li><img src="images/data2/images/chair.jpg" alt="chair" title="chair" id="wows1_1"/></li>
+    <li><img src="images/data2/images/food.jpg" alt="food" title="food" id="wows1_2"/></li>
+    <li><img src="images/data2/images/light.jpg" alt="light" title="light" id="wows1_3"/></li>
+    <li><img src="images/data2/images/bar.jpg" alt="wow slider" title="social" id="wows1_4"/></li>
+    <li><img src="images/data2/images/street.jpg" alt="street" title="street" id="wows1_5"/></li>
+  </ul></div>
+<div class="ws_script" style="position:absolute;left:-99%"></div>
+  <div class="ws_shadow"></div>
+  </div>  
+  <script type="text/javascript" src="javascripts/engine2/wowslider.js"></script>
+  <script type="text/javascript" src="javascripts/engine2/script.js"></script>
+
+<nav class="navbar navbar-inverse" style="height:55px" id="navheader">
+	<div class="container-fluid">
+	
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainbar" style="float:left;width:45px">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="mainbar">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="#" onclick="pop(this)">log in</a></li>
+				<li><a href="#" onclick="pop(this)">join us</a></li>		
+				<li><a href="#qa" id="scroll">about</a></li>
+				<li><a href="#phone" id="download">download</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">help <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li style="background:white"><a href="#">My GitHub</a></li>
+						<li style="background:white"><a href="#">My BitBucket</a></li>
+					</ul>
+				</li>
+				
+			</ul>	
+		</div>
+
+
+</nav>
+
+	<div class="title">
+
+		welcome to cschedule 
+		<div class="note2"><p class="decorated"><span>stay foolish stay hungry</span></p>
+
+
+		</div>
+	</div>
+
+	<div class="about">
+		about us
+		<div class="about_intro">
+			One way that Purdue Engineering is shaping the future of research is through preeminent teams. 
+			Complementing traditional hiring in the disciplines, we are hiring faculty and providing support 
+			to build preeminent teams in research areas with the greatest potential for world-changing impact. 
+			Building “preeminent teams” is a research-centric approach to faculty hiring that asks: 
+			What would it take to catapult your high-impact research area to international preeminence?<br>
+		</div>
+		news update
+		<div class="about_intro" id="phone">
+			Astronauts. Inventors. Leaders. Our rigorous academic programs 
+			— led by some of the top professors in the world — prepare students for all different walks of life. 
+			We empower our students to move the world forward.
+
+		</div>
+			download<br>
+			<div class="download" >
+			<center>
+				<table>
+				<tr>
+					<td style="border-right: 1px silver solid"><a href="#"><img src="images/apple.png" style="width:25%"></img></a></td>
+					<td><a href="#"><img src="images/Android.png"></img></a></td>
+				</tr>
+				<tr>
+					<td style="border-right: 1px silver solid">iPhone Version</td>
+					<td>Android Version</td>
+				</tr>
+			</table></center>
+		</div>
+		<div class="about_intro" style="font-size:12px">
+			if you have any questions regarding to download,please contact our technical support team<br>
+			technsupport@gmail.com
+		</div>
+	</div>
+	<div class="team">
+		<div class="vs"><em>learn our communitys</em><br>
+			<div class="business_user">
+				I agree with the previous poster that changing the color by className is a prettier approach. 
+				My argument however is that a className can be regarded as a 
+				definition of "why you want the background to be this or that color".
+			</div>
+			<div class="indi_user">
+				For instance, making it red is not just because you want it red, but because you'd want to inform users of an error. 
+				As such, setting the className "AnErrorHasOccured" on the body would be my preferred implementation.
+			</div>
+		</div>
+		<table>
+			<tr>
+<!-- Start WOWSlider.com BODY section -->
+<!-- Start WOWSlider.com BODY section -->
+<!-- Start WOWSlider.com BODY section -->
+<div id="wowslider-container1">
+<div class="ws_images"><ul>
+		<li><img src="images/data1/images/2.jpg" alt="2" title="2" id="wows1_0"/></li>
+		<li><img src="images/data1/images/7.jpg" alt="7" title="7" id="wows1_1"/></li>
+		<li><img src="images/data1/images/9.jpg" alt="http://wowslider.net/" title="9" id="wows1_2"/></li>
+		<li><img src="images/data1/images/13.jpg" alt="13" title="13" id="wows1_3"/></li>
+	</ul></div>
+<div class="ws_shadow"></div>
+</div>	
+<script type="text/javascript" src="javascripts/engine1/wowslider.js"></script>
+<script type="text/javascript" src="javascripts/engine1/script.js"></script>
+<!-- End WOWSlider.com BODY section -->
+  			</tr>
+		</table>
+	</div>
+
+<div class="qa" id="qa">
+	learn more about cschedule<br>
+	<div class="float-box">
+		<b>Q: How long, and in what positions, have you worked at Purdue?</b><br>
+		A: I have been at Purdue for almost five years. 
+		I began my Purdue career as a service worker in the Purdue Memorial Union. In the time I worked there, 
+		I enjoyed my interactions with the students and the bustling atmosphere. 
+
+	</div>
+	<div class="float-box">
+		<b>Q. Why did you decide to become in involved in CSSAC?</b><br>
+
+		A. I was approached by my former supervisor to become involved. 
+		She thought I would be able to represent my co-workers at PMU well. When I found out more about CSSAC, 
+		I thought it would be a good way to learn more about the University and be part of a positive movement at the University.
+
+	</div>
+
+	<div class="float-box">
+		<b>Q. How do you think CSSAC has benefited staff and Purdue over the years?</b><br>
+
+		A. CSSAC has been part of the conversation and enabled the University to offer things that have added value, 
+		such as trips and discounts, and has been a voice on key University committees for clerical and service employees. 
+		This has benefited the University by building employee morale and loyalty.
+
+	</div>
+	<div class="float-box">
+		<b>Q. What do you think CSSAC has been CSSAC's biggest accomplishment, particularly in the last few years?</b><br>
+
+		A. I feel CSSAC has focused on providing professional development opportunities for clerical and service staff, 
+		and making grant and scholarship funds available to help people advance.
+	</div>
+<div id="amazingcarousel-container-1">
+
+            
+    <div id="amazingcarousel-1" >
+        <div class="amazingcarousel-list-container">
+
+            <ul class="amazingcarousel-list">
+
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="images/dance-and-studio-phtoography-tips-3-lightbox.jpg" title="dance-and-studio-phtoography-tips-3"  class="html5lightbox" data-group="amazingcarousel-1" data-width="960" data-height="720" ><img src="images/dance-and-studio-phtoography-tips-3.jpg"  alt="dance-and-studio-phtoography-tips-3" /></a></div>
+<div class="amazingcarousel-title">dance-and-studio-phtoography-tips-3</div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="images/Nikon-School-travel-landscape-CR-new-rep-lightbox.jpg" title="Nikon-School-travel-landscape-CR-new-rep"  class="html5lightbox" data-group="amazingcarousel-1" data-width="960" data-height="720" ><img src="images/Nikon-School-travel-landscape-CR-new-rep.jpg"  alt="Nikon-School-travel-landscape-CR-new-rep" /></a></div>
+<div class="amazingcarousel-title">Nikon-School-travel-landscape-CR-new-rep</div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="images/order_7092-lightbox.jpg" title="order_7092"  class="html5lightbox" data-group="amazingcarousel-1" data-width="960" data-height="720" ><img src="images/order_7092.jpg"  alt="order_7092" /></a></div>
+<div class="amazingcarousel-title">order_7092</div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="images/studio-photo-cat-in-snow-with-young-girl-lightbox.jpg" title="studio-photo-cat-in-snow-with-young-girl"  class="html5lightbox" data-group="amazingcarousel-1" data-width="960" data-height="720" ><img src="images/studio-photo-cat-in-snow-with-young-girl.jpg"  alt="studio-photo-cat-in-snow-with-young-girl" /></a></div>
+<div class="amazingcarousel-title">studio-photo-cat-in-snow-with-young-girl</div>                    </div>
+                </li>
+                <li class="amazingcarousel-item">
+                    <div class="amazingcarousel-item-container">
+<div class="amazingcarousel-image"><a href="images/music-library-casual-meeting-space-lightbox.jpg" title="music-library-casual-meeting-space"  class="html5lightbox" data-group="amazingcarousel-1" data-width="960" data-height="720" ><img src="images/music-library-casual-meeting-space.jpg"  alt="music-library-casual-meeting-space" /></a></div>
+<div class="amazingcarousel-title">music-library-casual-meeting-space</div>                    </div>
+                </li>
+            </ul>
+            <div class="amazingcarousel-prev"></div>
+            <div class="amazingcarousel-next"></div>
+             <div class="amazingcarousel-nav"></div>
+        </div>
+       
+       
+    </div> 
+</div>
+<p style="font-size:16px;letter-spacing:2px;">example for the cschedule chatbox</p>
+</div>
+
+	<div class="street_view" style="background-image:url(street.jpg);background-repeat:no-repeat;background-size: 100% 100%;">
+		<!--<div class="street-up">change your idea</div>
+		<div class="street">make difference today</div>
+		<div class="street-down">create new trend</div>-->
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="icon">
+		<a href="#">
+		<img src="images/facebook.png"></img>
+		<img src="images/google.png"></img>
+		<img src="images/wechat.png"></img>
+		<img src="images/in.png"></img>
+	</a>
+	</div>
+	<div class="extra">
+		Employee Portal<br>
+		Blackboard<br>
+		Purdue Today<br>
+		myMail<br>
+		Outlook<br>
+		myPurdue<br>
+	</div>
+	<div class="extra">
+		Shop<br>
+		Calendar<br>
+		Libraries<br>
+		Information Technology<br>
+		Tuition Calculator<br>
+		Center for Healthy Living<br>
+	</div>
+		<div class="extra">
+	Faculty and Staff<br>
+	Careers<br>
+	Physical Facilities<br>
+	Directory<br>
+	Campus Map<br>
+	Construction<br>
+	</div>
+<br>
+	@All rights reserved | 2015
+</div>
+
+<div id="loginAndRegisterPanel" >
+
+</div>
+
+
+<script type="text/template" id="user-login-template"> 
+<div id="userLogin">
+<div class="action">log in cschedule here<a href="#"><img src="images/close.png" style="float:right;width:30px" onclick="hide()"></img></a></div>
+
+<center><table>
+<tr>
+<td class="pass"><label>email:</label></td>
+        <td><input id = "loginEmail" name="email" type="text" value="" placeholder="username"><br> </td>
+        </tr>
+<tr><td class="pass"><label>password:</label></td>
+       <td> <input id = "loginPassword" name="password" type="password"  value="" placeholder="password"><br> </td>
+ </tr>
+
+</table>
+</center>
+<button class="support" id ='showResetPasswordForm' ><a href="#">forgot password?</a></button>
+<button  class="support" id ='showRegisterForm' ><a href="#">register</button></a><br>
+<button class="request" id ='submitForLogin' ><a href="#">log in</a></button>
+<button class="request" id ='cancel' onclick="hide()"><a href="#">cancel</a></button>
+<div style="width:100%; padding-top:2%">if you have any questions, please contact our technical support team</div>
+</div>
+
+<div id="resetPassword" style="display:none">
+<p>Please input your email to reset password</p>
+<label>Email</label>
+        <input id = "resetEmail" name="email" type="text" value=""><br> 
+<button class="request" id ='sumbitForResetPassword' ><a href="#">sumbit</a></button>
+</div>
+
+<div id="userRegister" style="display:none">
+<div class="action">welcome to register at cschedule<a href="#"><img src="images/close.png" style="float:right;width:30px" onclick="hide()"></img></a></div>
+<center>
+<table>
+<tr>
+<td class="pass"><label>email:</label></td>
+       <td > <input id = "registerEmail" name="email"  type="text" value=""><br> </td>
+  </tr>
+
+<tr>
+<td class="pass"><label>username:</label></td>
+       <td> <input id = "registerUserName" name="username"  type="text" value=""><br></td>
+ </tr>
+<tr>
+<td class="pass"><label>password:</label></td>
+ <td> <input id = "registerPassword" name="password" type="password" value=""><br> </td>
+ </tr>
+
+<tr>
+<td class="pass">
+<label>mobile(optional):</label></td>
+  <td> <input id = "registerMobile" name="mobile" type="number" value=""><br> </td>
+  </tr>
+ </table>
+</center>
+<button class="request"id ='submitForRegister' >register</button>
+<button class="request"id ='showLoginForm' >back to login</button>
+<div style="width:100%">if you have any questions, please contact our technical support team</div>
+</div>
+
+</script>
+
+<script src="app/js/views/loginView.js"></script>
+<script type='text/javascript' src="utils/ajaxutil.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+{
+	"userID":"chat1",
+	"message":"helloChat1"
+
+	},
+	{
+		"userID":"chat2",
+		"message":"HelloChat2"
+
+	}
+]

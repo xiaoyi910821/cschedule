@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+body {
+  margin: 0;
+  background: #000; 
+}
+
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+  background: url('cover.png') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+  
+.intro{
+
+	
+	top:25%;
+	width: 55%;
+	min-width: 350px;
+	height: auto;
+	
+	left: 22.5%;
+	padding-top: 5%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-bottom: 3%;
+	background-color: rgba(0,0,0,0.1);
+	color: white;
+	position:absolute;
+	font-size: 20px;
+	font-family: Century Gothic, sans-serif;
+	font-variant: small-caps;
+	text-align: center;
+	float: left;
+	
+}
+.enter, .cl{
+	color: white;
+	text-align: center;
+	letter-spacing: 12px;
+		font-style: normal;
+		text-align: center;
+	width: 100%;
+	left: 0;
+	
+}
+.logo{
+	font-size: 14px;
+	letter-spacing: 3px;
+}
+.cl{
+	font-size: 300%;
+	line-height: 60px;
+
+}
+.enter{
+
+font-size: 40px;
+
+}
+a, a:hover{
+	color: white;
+	text-decoration: none;
+}
+a:hover{
+	color: white;
+}
+.intro img{
+	width:25px;
+	height: 25px;
+	opacity: 0.8;
+	margin-top: 3%;
+	margin-left: 7%;
+	margin-right: 7%;
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(cover.png) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+</style>
+<script>
+$( document ).ready(function() {
+	$(".intro").hide();
+			$(".intro").fadeIn(3000);
+			//$(".cl").animate({top: '100px'},2500);
+			//$(".enter").animate({top: '210px'},2500);		
+});
+
+
+</script>
+<body>
+<video autoplay volume="0.1" id="bgvid" poster="images/cover.png" loop>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+
+<source src="images/bg.mp4" type="video/mp4" >
+</video>
+<div class="intro">
+	<div class="cl">cschedule life<br>
+		<em class="logo">join us and start your free trail today<br></em>
+
+	</div>
+	<!--follow us:<br>
+	<a href="#">
+		<img src="facebook.png"></img>
+		<img src="google.png"></img>
+		<img src="wechat.png"></img>
+		<img src="in.png"></img>
+	</a>-->
+	<div class="enter"><a href="home.html">enter</a></div>
+</div>
+
+</body>
+</html>

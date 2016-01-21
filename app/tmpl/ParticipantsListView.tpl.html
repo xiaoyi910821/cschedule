@@ -1,0 +1,29 @@
+<template id="participantsListTemplate">
+<div id="ParticipantDiv" style="display:none;">
+    <div id="sidebar-hide-btn"> </div>
+    <div class="participantList"> 
+		<div id="search">
+			<input id="email" name="email" placeholder="Enter user e-mail" type="text" style="margin-top:8px"><br>
+			<p id="emaildiv" style="color:red; display:none">Please enter a valid email address.</p>
+			<button id ="searchForMember">Search</button>
+		</div> 
+
+		<div id="edit-user-form" style="display:none">
+			<p>The email you searched is not yet registered with CSchedule.</p>
+			<p>Please enter their contact info to invite them to register:</p>
+			<label>Name</label>
+			<input id="inputName" placeholder="Required" name="name" type="text" value=""><br />
+			<p id="nameDiv" style="display:none;color:red">Please enter a name.</p>
+			<label>Email</label>
+			<input id="inputEmail" value ="" placeholder="Required" name="email" type="text" value=""><br />
+			<p id="inputEmailFormat" style="display:none;color:red">Please enter a valid email address.</p>
+			<label>Mobile</label>
+			<input id="inputMobile" placeholder="Optional" name="mobile" type="text" value=""><br />
+			<button id="addMember">Add</button>
+			<button id="cancelAddMember">Cancel</button>
+		</div>
+		
+		<div id="display-user-form"> </div> 
+	</div>
+</div>
+</template>

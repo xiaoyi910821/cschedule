@@ -1,0 +1,434 @@
+@CHARSET "UTF-8";
+
+.ReqChat {
+  position: absolute;
+  bottom:0px;
+  left: 0px;
+  width: 160px;
+  border: none;
+  z-index: 1001;
+}
+
+.ReqRes {
+  position: absolute;
+  bottom:0px;
+  left: 186px;
+  width: 160px;
+  border: none;
+  z-index: 1001;
+}
+
+.ReqRes .face {
+    height: 20px;
+    margin-top: -12px;
+    margin-right: 3px;
+}
+
+.ReqRes .reqtype {
+    font-size: 6pt;
+    text-align: left;
+}
+.ReqRes .dateLarge {
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: left;
+}
+
+span.numcircle {
+  background: #77c;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.6em; 
+}
+
+.parent .popup {
+  display: none;
+}
+
+.parent:hover .popup {
+  display: block;
+}
+
+ul {
+    text-align: left;
+    display:block;
+    list-style-type: none;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    -webkit-padding-start: 5px;
+}
+li{
+	font-size:14px;
+	font-weight:bold;
+}
+
+
+body {
+    background: #88aaee;
+
+    margin-top: 0px;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	}
+
+.dialog label {
+	width:90px;
+    float:left;
+}
+
+.dialog .field {
+	width:170px;	
+}
+
+#calendar {
+	width: 1114px;
+	/*margin: 0 auto;WFB */
+  position: relative;
+}
+
+
+.taskname {
+    text-align: left;
+    margin-left: 16px;
+    margin-top:  38px;
+    
+    font-weight: bold;
+    font-size: 9pt;
+}
+
+.taskdescr {
+    font-size: 6pt;
+    padding-top: 4px;
+}
+
+.addtaskbtn {
+  font-size: 9pt;
+  color: blue;
+  background: white;
+  padding-left: 7px;
+  padding-right: 7px;
+  position: relative;
+  left: 62px;
+  top: 12px;
+  margin-bottom: -25px;
+}
+
+.hrtask {
+   display: block;
+   position: relative;
+   padding: 0;
+   margin: 8px auto;
+   margin-left: 48px;
+   height: 0;
+   width: 92%;
+   max-height: 0;
+   font-size: 1px;
+   line-height: 0;
+   clear: both;
+   border: none;
+   border-top:    1px solid #aaaaaa;
+   border-bottom: 1px solid #ffffff;
+   z-index:10;
+}
+
+
+#floatDiv {
+        position:absolute;
+        left:50%;
+        top:44px;
+        margin-top:122px;
+        margin-left:-210px;
+        width:330px;
+        height:130px;
+        background-color: #eee;
+    border: solid;
+    z-index : 9999;
+      border-color: #bbb;
+  box-shadow: 5px 5px 10px darkgrey;
+    }
+ 
+
+
+.memberListPic {
+    vertical-align:middle;
+    height : 32px;
+    width: 32px;
+}
+
+.showDetails {
+    font-size: 12pt;
+}
+
+.fc-today-button {
+    display: none
+}
+
+.userImg {
+    height: 32px;
+    width:  32px
+}
+
+.userName {
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.MemberList li {
+    -webkit-user-select: none;
+}
+
+#display-user-form li {
+    font-size: 10pt;
+}
+#display-user-form img {
+    height: 32px;;
+}
+
+#participantDialog {
+    z-index: 1000;
+}
+
+.fc-view-container table {
+    border-spacing: 12px 0px;
+}
+
+.fc-view-container .fc-widget-contentNEW {
+    border: none;
+}
+.fc-view-container .fc-widget-headerNEW {
+    border: none;
+}
+
+
+.fc-day-header.fc-widget-header {
+    padding:14px;
+    font-family: Avenir;
+    font-weight: lighter;
+}
+
+
+.icon-leftarrow:before {
+    content: "\f024"
+}
+.icon-rightarrow:before {
+    content: "\f025"
+}
+
+.ui-dialog {
+    box-shadow: none;
+    border: none;
+}
+
+/* moved from community.css   */
+.community{
+	width: 100px;
+	height: 100px;
+	border: 1px black;
+	background-color: #eee;
+	margin: 5px;
+	display: inline-block;
+}
+
+.nav-body {
+	display: block;
+	border: 1px black;
+}
+.new_community_btn {
+	width: 100px;
+	height: 100px;
+	border: 1px black;
+	background-color: #eee;
+	margin: 5px;
+	display: inline;
+	font-size: 10px;
+
+}
+.createCommunity {
+	width: 100px;
+	height: 100px;
+	border: 1px black;
+	background-color: #eee;
+	margin: 5px;
+	font-size: 10px;
+}
+.editCommunity {
+	width: 100px;
+	height: 100px;
+	border: 1px black;
+	background-color: #eee;
+	margin: 5px;
+	font-size: 10px;
+}
+.box {
+  width: 20%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+font-size: 1em;
+padding: 10px;
+color: #fff;
+border: 2px solid orange;
+border-radius: 20px/50px;
+text-decoration: none;
+cursor: pointer;
+/*transition: all 0.3s ease-out;*/
+}
+.button:hover {
+background: orange;
+}
+
+/*.overlay:target {
+visibility: visible;
+opacity: 1;
+}*/
+
+.overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0, 0, 0, 0.7);
+transition: opacity 500ms;
+display: none;
+opacity: 1;
+}
+
+
+.popup {
+margin: 450;
+margin-right: inherit;
+padding: 99px;
+background: #fff;
+border-radius: 5px;
+width: 30%;
+position: relative;
+
+
+transition: all 5s ease-in-out;
+}
+
+.popup h5 {
+margin-top: 0;
+color: #333;
+font-family: Tahoma, Arial, sans-serif;
+}
+.cchat .close {
+
+position: absolute;
+top: 30px;
+right: 30px;
+transition: all 200ms;
+font-size: 30px;
+font-weight: bold;
+text-decoration: none;
+color: #333;
+}
+.cchat .close:hover {
+color: orange;
+}
+.cchat .content {
+height: 500px;
+max-height: 30%;
+overflow: auto;
+}
+#chatbox{
+width:200px;
+height:200px;
+background:grey;
+position:absolute;
+left:90%;
+margin-left:-100px;
+top:-200px;
+margin-top:-100px;
+}
+
+.chat-text{
+top: 90px;
+position: inherit;
+bottom: 10px
+
+}
+#sendchat{
+position: absolute;
+bottom: 10px;
+left: 124px;
+}
+.chatbox .cchat ul .ulclass li{
+display: inline;
+}
+
+#chat-messages li {
+list-style: none;
+}
+
+
+.helperPoolImg {
+	width: 44px;
+	height: 44px;
+	border-radius: 22px;
+	background-size: 100% 100%;
+}
+
+.assigneeImg {
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	background-size: 100% 100%;
+}
+
+
+/* Arrow tips, to add to popup divs */
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	
+	border-bottom: 10px solid black;
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-top: 20px solid #f00;
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 60px solid transparent;
+	border-bottom: 60px solid transparent;
+	
+	border-left: 60px solid green;
+}
+
+.arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	
+	border-right:10px solid blue; 
+}

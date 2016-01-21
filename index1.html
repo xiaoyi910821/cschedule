@@ -1,0 +1,223 @@
+<html>
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>     
+
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>                
+	        
+        <!--script type='text/javascript' src='javascripts/underscore.js'></script-->
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js'></script>
+		<!--script type='text/javascript' src='javascripts/backbone.js'></script-->
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone.js'></script>
+        
+        <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+
+        <link rel='stylesheet' type='text/css' href='stylesheets/fullcalendar.css'/>
+        <script type='text/javascript' src='javascripts/fullcalendar.js'></script>        
+
+		<link rel='stylesheet' type='text/css' href='stylesheets/application.css'/>		        
+        <script type='text/javascript' src='javascripts/application.js'></script>
+</head>
+    
+<body>        
+    <img src="./images/UIheader.png" width="1154">
+    <h2 style="padding-top: 6px;padding-bottom: 6px; color:white; background-color:#aaa;                  text-align: left; padding-left:20px;">The Church in San Jose</h3>                
+    <hr class="hrtask" style="top: 102px">
+    <hr class="hrtask" style="top: 148px">        
+    <div style="margin-left: 36px; margin-top:-30px;">
+        <div id="event1_title" style="float:left; margin-top: 12px;">
+        </div>
+        <div id='calendar' style="display:inline-block"></div>		
+    </div>
+                    
+    <div id='eventDialog' class='dialog ui-helper-hidden'>
+        <form>
+            <div>
+                <label>Event name:</label>
+                <input id='title' class="field" type="text"></input>
+            </div>
+            <div>
+                <label>Color:</label>
+                <input id='color' class="field" type="text"></input>
+            </div>
+        </form>
+    </div>        
+    <br><br>
+    <img style="width:1150px" src="./images/UIdesign.png">        
+    <div id='floatDiv' style='display:none' >
+    <div style='background-color: #bbb; height: 26px; margin-bottom: 8px;   font-weight: bold; padding-top:4px;'>
+          <div style='display:inline-block; margin: 0px 0px 12px 0px;
+          padding-bottom: 4px; font-size: 14pt;'>Food Service Helpers
+          </div>
+          <div id='closeHelpers' style='display:inline-block; position: absolute; right: 5px;'>
+          Close
+          </div>
+    </div>
+    </div>
+
+
+    <div class="MemberList"></div>
+
+
+    <div id="ParticipantDiv">
+        
+        <div class="sidebar-hide-btn dark-hover "> 
+            <span id="WFBcloseBtn" class="icon-sm icon-rightarrow"></span>
+        </div>
+
+        <div id="participantDialog" title="Participant Information"></div>
+    </div>
+
+
+    <div class="page"></div>
+
+
+    <div id="participantDialog" title="Participant Information"></div>
+
+
+    <div id="messageDialog" ></div>
+</body>
+
+
+
+<script>
+$.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+    options.url = 'http://apitest1.servicescheduler.net/' +
+        options.url + '?d=IOS&sc=28e336ac6c9423d946ba02dddd6a2632&v=1.4.0&';
+});
+</script>
+
+
+<script type="text/template" id="user-list-template"> 
+
+
+
+<div id= "search">
+	<p>Please input an email to search for a participant</p>
+	<input id = "email" name="email" placeholder="Enter e-mail" type="text" value=""><br>
+	<p id="emaildiv" style="color:red; display:none" >Email Format is not correct!</p>
+	<button id ='searchForMember' >Search</button>
+</div> 
+
+<div id="edit-user-form" style="display:none">
+	<p>The email you searched is not yet registered with CSchedule.</p>
+	<p>Please enter their contact info to invote them to register:</p>
+	<label>Name</label>		
+	<input id = "inputName" title= "Necessary! Please input your name" name="name" type="text" value=    "">
+	<br />
+	<p id="nameDiv" style="display:none;color:red">Name is necessary!</p>
+	<label>Email</label>
+	<input id = "inputEmail" value ="" title= "Necessary! Please input your email" name="email" type=    "text" value="">
+	<br />
+	<p id="inputEmailFormat" style="display:none;color:red">Email Format is not correct!</p>
+	<label>Mobile</label>
+	<input id = "inputMobile" title= "Optional! Please input your phone number"name="mobile" type=        "text" value="">
+	<hr />		
+	<button id ='addMember' >Add</button>
+	<button id ='cancelAddMember' >Cancel</button>
+</div>
+<hr/>
+	
+<div id="display-user-form">
+	<% _.each(participants, function(participant) { %>
+	<ul >
+	<li data-id=<%= participant.id%> data-email=<%= htmlEncode(participant.get('email')) %> data-name=<%= htmlEncode(participant.get('name')) %>	 class=        "participant"> 	
+	<img src = '<%= participant.get('profile') %>'>  <%= htmlEncode(participant.get('name')) %>					
+	</li>
+	</ul>
+	<% }); %>  
+</div>    
+</script>
+
+<script type="text/template" id="display-user-template">
+    <img src = '<%= user.profile %>'>
+	<h2 id= 'updateusername' contenteditable="true" contenteditable="true"><%= user.username %></h2>
+	<p>Email: <%= user.email %></span></p>
+	Mobile:<span id='updatemobile' contenteditable="true"><%= user.mobile %></span>
+	<hr />
+	<button id ="deleteParticipant" value=<%= user.id %> >Remove</button>
+	<button id ="updateUser" value=<%= user.id %> >Update</button>
+</script>
+ 
+<script type="text/template" id="messageBox-template">
+ID:<%= id%>
+<br>
+Name:<%= name %>
+<br>
+<input type = text ></input>
+
+<div id="con_history"></div>
+
+    
+</script>
+
+
+
+
+<script>
+    function htmlEncode(value){
+      return $('<div/>').text(value).html();
+    }
+</script>
+<script src="app/js/collections/users.js"></script>
+<script src="app/js/models/user.js"></script>
+<script src="app/js/router.js"></script>
+<script src="app/js/views/UserAddView.js"></script>
+<script src="app/js/views/UserListView.js"></script>
+<!-- community test code  -->
+<script src="app/js/views/CommunityListView.js"></script>
+<script src="app/js/collections/communities.js"></script>
+<script src="app/js/models/community.js"></script>
+<script src="app/js/collections/participants.js"></script>
+<script src="app/js/models/participant.js"></script>
+<script src="app/js/views/ParticipantView.js"></script>
+<script src="app/js/collections/participants.js"></script>
+<script src="app/js/models/loggedInUser.js"></script> 
+<script src="app/js/collections/loggedInUsers.js"></script>
+<!--script src="app/js/models/persons.json"></script-->
+<script src="javascripts/layer.js"></script>
+<script src="app/js/views/DialogView.js"></script>
+
+
+<script>
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+/*
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        
+    })
+*/
+    
+    
+  var slider_widthB = $('.board-widgets').width() - 40;//get width automatically
+        
+    
+  $('.sidebar-hide-btn').click(function() {
+    
+        if(!$(this).is(':animated'))//prevent double click to double margin
+        {
+            $('.board-widgets').animate({"margin-right": '-='+slider_widthB},'slow','easeInQuart');
+            $('#WFBcloseBtn').removeClass('icon-rightarrow');
+            $('#WFBcloseBtn').addClass('icon-leftarrow');
+        }
+  });
+    
+    
+    
+  $('.sidebar-show-btn').click(function() {
+
+    if(!$(this).is(':animated'))//prevent double click to double margin
+        {
+        $('.board-widgets').animate({"margin-right": '+='+slider_widthB},'slow','easeOutBounce');
+        $('#WFBcloseBtn').removeClass('icon-leftarrow');
+        $('#WFBcloseBtn').addClass('icon-rightarrow');
+    }
+  });
+    
+    
+
+});       
+</script>
+</html>

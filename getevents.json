@@ -1,0 +1,210 @@
+{
+	"delevent": [],
+	"delbaseevent": [],
+	"baseevent": [{
+		"beventid": "30001",
+		"eventname": "Practice time",
+		"desp": "This is a weekly practice time",
+		"starttime": "20:30:00",
+		"endtime": "23:59:20",
+		"tzid": "1",
+		"location": "Mountain View Park",
+		"host": "",
+		"from": "2015-05-16",
+		"to": "2015-08-21",
+		"frequency": "weekly",
+		"interval": ["Monday","Friday"]
+	},
+	{
+		"beventid": "30002",
+		"eventname": "Gametime",
+		"desp": "This is a weekly game event",
+		"starttime": "20:30: 00",
+		"endtime": "23: 59: 20",
+		"tzid": "1",
+		"location": "ProspectHighSchool",
+		"host": "",
+		"from": "2015-05-16",
+		"to": "2015-08-21",
+		"frequency": "weekly",
+		"interval": ["Sunday"]
+	}],
+	"event": {
+		"30001": [{
+			"eventid": "30008",
+			"eventname": "",
+			"desp": "",
+			"startdatetime": "2015-09-28 20:30:00",
+			"enddatetime": "2015-09-28 23:59:20",
+			"tzid": "",
+			"location": "",
+			"host": "",
+			"beventid": "30001",
+			"task": [{
+				"taskid": "30071",
+				"taskname": "Set up net and prepare field",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": []
+			},
+			{
+				"taskid": "30072",
+				"taskname": "Bring snacks",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": []
+			},
+			{
+				"taskid": "30073",
+				"taskname": "Collect balls",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": [{
+					"taskhelperid": "30026",
+					"userid": "124",
+					"username": "Dongling",
+					"userprofile": "http: \/\/test.cschedule.com\/profile\/124.png\t",
+					"status": "A"
+				},
+				{
+					"taskhelperid": "30027",
+					"userid": "122",
+					"username": "Bill",
+					"userprofile": "http: \/\/test.cschedule.com\/profile\/122.png",
+					"status": "A"
+				}]
+			},
+			{
+				"taskid": "30074",
+				"taskname": "Cleanfield",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": [{
+					"taskhelperid": "30028",
+					"userid": "123",
+					"username": "Cyndi",
+					"userprofile": "http: \/\/test.cschedule.com\/profile\/123.png\t",
+					"status": "A"
+				}]
+			}]
+		},
+		{
+			"eventid": "30009",
+			"eventname": "",
+			"desp": "",
+			"startdatetime": "2015-10-02 20:30:00",
+			"enddatetime": "2015-10-02 23:59:20",
+			"tzid": "",
+			"location": "",
+			"host": "",
+			"beventid": "30001",
+			"task": [{
+				"taskid": "30071",
+				"taskname": "Set up net and prepare field",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": []
+			},
+			{
+				"taskid": "30072",
+				"taskname": "Bring snacks",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": []
+			},
+			{
+				"taskid": "30073",
+				"taskname": "Collect balls",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": [{
+					"taskhelperid": "30030",
+					"userid": "124",
+					"username": "Dongling",
+					"userprofile": "http: \/\/test.cschedule.com\/profile\/124.png\t",
+					"status": "A"
+				},
+				{
+					"taskhelperid": "30031",
+					"userid": "125",
+					"username": "Bill",
+					"userprofile": "http: \/\/test.cschedule.com\/profile\/125.png",
+					"status": "A"
+				}]
+			},
+			{
+				"taskid": "30074",
+				"taskname": "Cleanfield",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": [{
+					"taskhelperid": "30033",
+					"userid": "123",
+					"username": "Cyndi",
+					"userprofile": "http: \/\/test.cschedule.com\/profile\/123.png\t",
+					"status": "A"
+				}]
+			}]
+		}],
+		"30002": [{
+			"eventid": "30002",
+			"eventname": "",
+			"desp": "",
+			"startdatetime": "2015-10-04 02:00:57",
+			"enddatetime": "2015-10-04 03:30:00",
+			"tzid": "",
+			"location": "Cupertino High School",
+			"host": "",
+			"beventid": "30002",
+			"task": [{
+				"taskid": "30061",
+				"taskname": "Ride Service",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": [{
+					"taskhelperid": "30039",
+					"userid": "124",
+					"username": "Dongling",
+					"userprofile": "http: \/\/test.cschedule.com\/profile\/124.png\t",
+					"confirm": "0"
+				}]
+			}]
+		},
+		{
+			"eventid": "30003",
+			"eventname": "",
+			"desp": "",
+			"startdatetime": "2015-10-11 02:00: 57",
+			"enddatetime": "2015-10-11 01:30:00",
+			"tzid": "",
+			"location": "Prospect HighSchool",
+			"host": "No host",
+			"beventid": "30002",
+			"task": [{
+				"taskid": "30001",
+				"taskname": "Food Service",
+				"repeating": "False",
+				"desp": "This is one time task",
+				"assignallowed": "2",
+				"taskhelper": []
+			},
+			{
+				"taskid": "30061",
+				"taskname": "RideService",
+				"repeating": "True",
+				"desp": "",
+				"assignallowed": "2",
+				"taskhelper": []
+			}]
+		}]
+	}
+}

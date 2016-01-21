@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>jQuery Revealing.js Examples</title>
+    <meta charset="utf8">
+
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="assets/jquery.revealing.js"></script>
+<link rel="stylesheet" href="assets/revealing.css">
+    <link rel="stylesheet" href="assets/main.css">
+
+    <script>
+        $(document).ready(function() {
+            // build blocs
+            var blocs = Array.apply(null, Array(20)).map(function() {
+                 $('.fancy-blocks').append($('<div class="bloc"></div>'));
+            });
+
+            // initialize
+            $('.fancy-title, .fancy-quote').revealing();
+            $('.fancy-blocks').revealing({
+                tokenizer: function(node) {
+                    if ($(node).children('.bloc').length) {
+                        $(node).children('.bloc').wrap('<span></span>');
+                        return [node];
+                    }
+
+                    return null;
+                }
+            });
+
+            // run the initial animation
+            setTimeout(function() {
+                $('.revealing').revealing('show');
+            }, 300);
+
+            // replay
+            $('.play').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+
+                // only replay the targeted elements
+                $(target).find('.revealing').revealing('reset');
+                setTimeout(function() {
+                    $(target).find('.revealing').revealing('show');
+                }, 100);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+
+            <blockquote class="fancy-quote revealing">
+                <p>check your event<br>have fun with us</p>
+            </blockquote>
+    </div>
+
+</body>
+</html>

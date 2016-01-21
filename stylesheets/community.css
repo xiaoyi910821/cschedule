@@ -1,0 +1,154 @@
+
+			.community{
+				width: 100px;
+				height: 100px;
+				border: 1px black;
+				background-color: #eee;
+				margin: 5px;
+				display: inline-block;
+			}
+
+			.nav-body {
+				display: block;
+				border: 1px black;
+			}
+			.new_community_btn {
+				width: 100px;
+				height: 100px;
+				border: 1px black;
+				background-color: #eee;
+				margin: 5px;
+				display: inline;
+				font-size: 10px;
+
+			}
+			.createCommunity {
+				width: 100px;
+				height: 100px;
+				border: 1px black;
+				background-color: #eee;
+				margin: 5px;
+				font-size: 10px;
+			}
+			.editCommunity {
+				width: 100px;
+				height: 100px;
+				border: 1px black;
+				background-color: #eee;
+				margin: 5px;
+				font-size: 10px;
+			}
+			.box {
+			  width: 20%;
+			  margin: 0 auto;
+			  background: rgba(255,255,255,0.2);
+			  padding: 35px;
+			  border: 2px solid #fff;
+			  border-radius: 20px/50px;
+			  background-clip: padding-box;
+			  text-align: center;
+			}
+
+		.button {
+		  font-size: 1em;
+		  padding: 10px;
+		  color: #fff;
+		  border: 2px solid orange;
+		  border-radius: 20px/50px;
+		  text-decoration: none;
+		  cursor: pointer;
+		  /*transition: all 0.3s ease-out;*/
+		}
+		.button:hover {
+		  background: orange;
+		}
+
+	/*.overlay:target {
+	  visibility: visible;
+	  opacity: 1;
+	}*/
+
+		.overlay {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  background: rgba(0, 0, 0, 0.7);
+		  transition: opacity 500ms;
+		  display: none;
+		  opacity: 1;
+		}
+
+
+	.popup {
+		margin: 450;
+    margin-right: inherit;
+    padding: 99px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+
+
+	  transition: all 5s ease-in-out;
+	}
+
+	.popup h5 {
+	  margin-top: 0;
+	  color: #333;
+	  font-family: Tahoma, Arial, sans-serif;
+	}
+	.cchat .close {
+
+	  position: absolute;
+	  top: 30px;
+	  right: 30px;
+	  transition: all 200ms;
+	  font-size: 30px;
+	  font-weight: bold;
+	  text-decoration: none;
+	  color: #333;
+	}
+	.cchat .close:hover {
+	  color: orange;
+	}
+	.cchat .content {
+	  height: 500px;
+	  max-height: 30%;
+	  overflow: auto;
+	}
+	#chatbox{
+	width:200px;
+	height:200px;
+	background:grey;
+	position:absolute;
+	left:90%;
+	margin-left:-100px;
+	top:-200px;
+	margin-top:-100px;
+}
+
+ .chat-text{
+ 	top: 90px;
+ 	position: inherit;
+ 	bottom: 10px
+ 	
+ 	}
+ 	#sendchat{
+ 		position: absolute;
+        bottom: 10px;
+        left: 124px;
+ 	}
+ 	.chatbox .cchat ul .ulclass li{
+ 		display: inline;
+ 	}
+
+#chat-messages li {
+	list-style: none;
+}
+
+
+
+
+	
